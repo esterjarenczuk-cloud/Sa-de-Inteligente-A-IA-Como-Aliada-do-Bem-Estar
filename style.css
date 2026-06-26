@@ -1,0 +1,126 @@
+/* Configurações Globais e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-principal: #f8fafc;
+    --bg-card: #ffffff;
+    --texto-escuro: #0f172a;
+    --texto-suave: #475569;
+    --cor-primaria: #0d9488; /* Teal */
+    --cor-secundaria: #0891b2; /* Cyan */
+    --sombra: rgba(148, 163, 184, 0.15);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-principal);
+    color: var(--texto-escuro);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    line-height: 1.5;
+}
+
+/* Container do Card Principal */
+.card {
+    background-color: var(--bg-card);
+    max-width: 650px;
+    width: 100%;
+    padding: 48px;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px var(--sombra), 0 10px 10px -5px var(--sombra);
+    border: 1px solid #f1f5f9;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 30px -5px rgba(148, 163, 184, 0.25);
+}
+
+/* Badge / Tag superior */
+.tag-inovacao {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f0fdfa;
+    color: var(--cor-primaria);
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Tipografia */
+.titulo {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+    color: var(--texto-escuro);
+}
+
+.destaque {
+    background: linear-gradient(to right, var(--cor-primaria), var(--cor-secundaria));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.descricao {
+    font-size: 1.125rem;
+    color: var(--texto-suave);
+    margin-bottom: 32px;
+    line-height: 1.75;
+}
+
+/* Botão */
+.botao {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(13, 148, 136, 0.25);
+    transition: all 0.2s ease;
+}
+
+.botao:hover {
+    background-color: #0f766e; /* Tom mais escuro de teal */
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px -3px rgba(13, 148, 136, 0.35);
+}
+
+.botao:active {
+    transform: translateY(0);
+}
+
+/* Ajustes para telas menores (celulares) */
+@media (max-width: 480px) {
+    .card {
+        padding: 32px 20px;
+    }
+    .titulo {
+        font-size: 1.75rem;
+    }
+    .descricao {
+        font-size: 1rem;
+    }
+}
